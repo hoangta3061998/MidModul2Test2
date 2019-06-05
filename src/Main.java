@@ -77,8 +77,8 @@ public class Main {
                     System.out.println("Enter id:");
                     int id = scanner.nextInt();
                     scanner.nextLine();
-                    if (productManager.findProduct(id) != -1) {
-                        Product product = productManager.getProductsList().get(productManager.findProduct(id));
+                    if (productManager.findProduct(id) != null) {
+                        Product product = productManager.findProduct(id);
                         System.out.println("Result:");
                         System.out.println("\nId \t Name \t Description \t Price \t Status");
                         System.out.printf("\n%d \t %s \t %s \t %d \t %b ", product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.isStatus());

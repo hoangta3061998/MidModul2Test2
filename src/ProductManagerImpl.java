@@ -40,12 +40,12 @@ public class ProductManagerImpl implements ProductManager {
 
     @Override
     public boolean addProduct(Product product) {
-        if (isDuplicateProduct(product)) {
-            return false;
-        } else {
+        boolean isAdded = false;
+        if (!isDuplicateProduct(product)){
             productsList.add(product);
-            return true;
+            isAdded = true;
         }
+        return isAdded;
     }
 
     @Override
@@ -73,11 +73,11 @@ public class ProductManagerImpl implements ProductManager {
     }
 
     @Override
-    public int findProduct(int id) {
-        if(getIndexById(id)!= INVALIDID){
-            return getIndexById(id);
+    public Product findProduct(int id) {
+        if (getIndexById(id)!= -1){
+            return productsList.get(getIndexById(id));
         } else {
-            return INVALIDID;
+            return null;
         }
     }
 

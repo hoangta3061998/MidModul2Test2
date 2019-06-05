@@ -7,7 +7,7 @@ public interface ProductManager {
 
     boolean deleteProduct(int id);
 
-    int findProduct(int id);
+    Product findProduct(int id);
 
     void sortByPrice();
 
